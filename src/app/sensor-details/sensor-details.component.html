@@ -1,0 +1,25 @@
+<md-card>
+  <md-card-header>
+    <div md-card-avatar>
+      <md-icon *ngIf="sensor.status == '0'">check_circle</md-icon>
+      <md-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</md-icon>
+    </div>
+    <md-card-title>
+      {{ mapping[sensor.id]?.desc || sensor.id }}
+    </md-card-title>
+    <md-card-subtitle>
+      <label for="">Last Tripped {{ sensor.lastUpdated | date:'short' }}</label>
+    </md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <div *ngIf="sensor.status == '1'">Tripped</div>
+    <div *ngIf="sensor.status == '0'">Idle</div>
+    <md-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</md-icon>
+  </md-card-content>
+  
+  <md-card-actions>
+    <button md-raised-button md-button color="secondary">
+      History
+    </button>
+  </md-card-actions>
+</md-card>
