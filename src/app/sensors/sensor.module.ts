@@ -1,16 +1,21 @@
-import { SensorModule } from './sensors/sensor.module';
-import { AppRoutingModule } from './routing.module';
+import { SensorRouting } from './sensors-routing.module';
+import { SensorService } from './sensor.service';
+import { WebsocketService } from './websocket.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule, MdIconModule, MdCardModule } from '@angular/material';
-import { AppComponent } from './app.component';
+import { SensorDetailsComponent } from './sensor-details/sensor-details.component';
+import { SensorHistoryComponent } from './sensor-history/sensor-history.component';
+import { SensorDashboardComponent } from './sensor-dashboard/sensor-dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    SensorDetailsComponent,
+    SensorHistoryComponent,
+    SensorDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,10 +27,8 @@ import { AppComponent } from './app.component';
     MdToolbarModule,
     MdIconModule,
     MdCardModule,
-    SensorModule,
-    AppRoutingModule
+    SensorRouting
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [WebsocketService, SensorService],
 })
-export class AppModule { }
+export class SensorModule { }

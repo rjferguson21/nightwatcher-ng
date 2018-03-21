@@ -41,7 +41,7 @@ export class SensorService {
     this.sensorStore = new SensorStore;
   }
 
-  get(): Observable<SensorStore> {
+  list(): Observable<SensorStore> {
     return this.http.get('/api/sensors')
                     .flatMap( (response: Response) => {
                       return response.json();
@@ -55,5 +55,16 @@ export class SensorService {
                       return this.sensorStore;
                     });
   }
-
+  get(id: string): Observable<Sensor> {
+    return this.http.get('/api/sensors/' + id)
+                    .map( (response: Response) => {
+                      return response.json();
+                    });
+  }
+  history(id: string): Observable<Sensor[]> {
+    return this.http.get('/api/sensors/' + id + '/history')
+                    .map( (response: Response) => {
+                      return response.json();
+                    });
+  }
 }

@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+  labels:
+    run: webapp
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  - port: 443
+    protocol: TCP
+    name: https
+  selector:
+    run: webapp
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: rjferguson21/nightwatcher-ng
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns

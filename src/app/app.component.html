@@ -1,5 +1,5 @@
 <md-toolbar color="primary" class="mat-elevation-z6">
-  <button md-button>
+  <button md-button [routerLink]="['sensors']">
     Home
   </button>
   <button md-button>
@@ -9,9 +9,7 @@
 
 <div>
   <div class="main">
-    <div fxLayout="row" fxLayoutWrap fxLayoutAlign="start" fxLayoutGap="20px"> 
-      <app-sensor-details fxFlex="400px" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
 
