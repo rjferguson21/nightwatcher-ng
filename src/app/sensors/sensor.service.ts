@@ -15,6 +15,14 @@ export class Sensor {
   id: string;
   lastUpdated: Date;
   status: string;
+  name?: string;
+}
+export class SensorHistoryEvent {
+  id: string;
+  sensorId: string;
+  fromStatus: string;
+  toStatus: string;
+  lastUpdated: Date;
 }
 
 export class SensorStore {
@@ -61,7 +69,7 @@ export class SensorService {
                       return response.json();
                     });
   }
-  history(id: string): Observable<Sensor[]> {
+  history(id: string): Observable<SensorHistoryEvent[]> {
     return this.http.get('/api/sensors/' + id + '/history')
                     .map( (response: Response) => {
                       return response.json();
