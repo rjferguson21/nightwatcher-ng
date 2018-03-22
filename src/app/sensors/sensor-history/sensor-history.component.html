@@ -1,16 +1,2 @@
-<div class="sensor-history">
-  <h3>{{ sensor?.name }} History</h3>
-  <div class="header" fxLayout="row" fxLayoutWrap fxLayoutAlign="start" fxLayoutGap="20px">
-    <span fxFlex="10">Sensor ID</span>
-    <span fxFlex="10">Last Updated</span>
-    <span fxFlex="10">From Status</span>
-    <span fxFlex="10">Status</span>
-  </div>
-  
-  <div *ngFor="let sensor of history" fxLayout="row" fxLayoutWrap fxLayoutAlign="start" fxLayoutGap="20px">
-    <span fxFlex="10">{{ sensor.sensorId }}</span>
-    <span fxFlex="10">{{ sensor.lastUpdated | amTimeAgo }}</span>
-    <span fxFlex="10">{{ sensor.fromStatus }}</span>
-    <span fxFlex="10">{{ sensor.toStatus }}</span>
-  </div>
-</div>
+<h3>{{ sensor?.name }} History</h3>
+<app-history-table [history]="history"></app-history-table>

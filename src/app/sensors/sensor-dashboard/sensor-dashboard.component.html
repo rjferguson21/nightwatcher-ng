@@ -1,3 +1,7 @@
-<div fxLayout="row" fxLayoutWrap fxLayoutAlign="start" fxLayoutGap="20px"> 
-  <app-sensor-details fxFlex="400px" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
+<div fxLayout fxLayoutGap="25px">
+  <app-history-table fxFlex="33" [history]="history" [displayedColumns]="displayedColumns"></app-history-table>
+  <div fxFlex fxLayout="column" fxLayoutGap="25px">
+    <h3>Sensors</h3>
+    <app-sensor-details fxFlex="nogrow" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
+  </div>
 </div>

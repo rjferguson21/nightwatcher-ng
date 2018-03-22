@@ -1,0 +1,42 @@
+<h3>History</h3>
+
+<div class="sensor-history">
+  <mat-table #table [dataSource]="history">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Event ID </mat-header-cell>
+      <mat-cell *matCellDef="let sensor"> {{ sensor.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sensorId">
+      <mat-header-cell *matHeaderCellDef> Sensor ID </mat-header-cell>
+      <mat-cell *matCellDef="let sensor"> {{ sensor.sensorId }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let sensor"> {{ sensor.name }} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="lastUpdated">
+      <mat-header-cell *matHeaderCellDef> Last Updated </mat-header-cell>
+      <mat-cell *matCellDef="let sensor"> {{ sensor.lastUpdated | amTimeAgo }} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="fromStatus">
+      <mat-header-cell *matHeaderCellDef> From </mat-header-cell>
+      <mat-cell *matCellDef="let sensor"> {{ sensor.fromStatus }} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="toStatus">
+      <mat-header-cell *matHeaderCellDef> To </mat-header-cell>
+      <mat-cell *matCellDef="let sensor"> {{ sensor.toStatus }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -1,3 +1,4 @@
+import { Mapping } from './mapping';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { WebsocketService } from './websocket.service';
@@ -23,6 +24,7 @@ export class SensorHistoryEvent {
   fromStatus: string;
   toStatus: string;
   lastUpdated: Date;
+  name?: string;
 }
 
 export class SensorStore {
@@ -58,7 +60,7 @@ export class SensorService {
                       console.log('data', data);
                       return data;
                     }))
-                    .map( data => {
+                    .map(data => {
                       this.sensorStore.update(data as Sensor);
                       return this.sensorStore;
                     });
@@ -73,6 +75,17 @@ export class SensorService {
     return this.http.get('/api/sensors/' + id + '/history')
                     .map( (response: Response) => {
                       return response.json();
+                    });
+  }
+  allHistory(): Observable<SensorHistoryEvent[]> {
+    return this.http.get('/api/history')
+                    .map( (response: Response) => {
+                      return response.json();
+                    }).flatMap((history: SensorHistoryEvent[]) => {
+                      return history.map((event) => {
+                        event.name = Mapping[event.sensorId].desc;
+                        return history;
+                      });
                     });
   }
 }

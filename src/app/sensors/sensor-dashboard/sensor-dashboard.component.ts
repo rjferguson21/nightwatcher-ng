@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs/Subscription';
-import { SensorService, SensorStore } from './../sensor.service';
+import { SensorService, SensorStore, SensorHistoryEvent } from './../sensor.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,12 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class SensorDashboardComponent implements OnInit {
   private socketSubscription: Subscription;
   messages: string[] = [];
+  displayedColumns = ['name', 'sensorId', 'fromStatus', 'toStatus', 'lastUpdated'];
   public sensorStore: SensorStore;
+  public history: SensorHistoryEvent[];
+
 
   constructor(public sensorService: SensorService) { }
 
   ngOnInit() {
     this.sensorService.list().subscribe(store => store = this.sensorStore);
+    this.sensorService.allHistory().first().subscribe((history: SensorHistoryEvent[]) => {
+      this.history = history;
+    });
   }
 
 }

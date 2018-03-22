@@ -1,25 +1,25 @@
-<md-card>
-  <md-card-header>
-    <div md-card-avatar>
-      <md-icon *ngIf="sensor.status == '0'">check_circle</md-icon>
-      <md-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</md-icon>
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar>
+      <mat-icon *ngIf="sensor.status == '0'">check_circle</mat-icon>
+      <mat-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</mat-icon>
     </div>
-    <md-card-title>
+    <mat-card-title>
       {{ mapping[sensor.id]?.desc || sensor.id }}
-    </md-card-title>
-    <md-card-subtitle>
+    </mat-card-title>
+    <mat-card-subtitle>
       <label for="">Last Tripped {{ sensor.lastUpdated | date:'short' }}</label>
-    </md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
     <div *ngIf="sensor.status == '1'">Tripped</div>
     <div *ngIf="sensor.status == '0'">Idle</div>
-    <md-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</md-icon>
-  </md-card-content>
+    <mat-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</mat-icon>
+  </mat-card-content>
   
-  <md-card-actions>
-    <button md-raised-button md-button color="secondary" [routerLink]="['.', sensor.id]">
+  <mat-card-actions>
+    <button mat-raised-button mat-button color="secondary" [routerLink]="['.', sensor.id]">
       History
     </button>
-  </md-card-actions>
-</md-card>
+  </mat-card-actions>
+</mat-card>

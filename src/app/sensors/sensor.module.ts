@@ -7,16 +7,17 @@ import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MomentModule } from 'angular2-moment/moment.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule, MdIconModule, MdCardModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule,MatIconModule, MatCardModule, MatTableModule } from '@angular/material';
 import { SensorDetailsComponent } from './sensor-details/sensor-details.component';
 import { SensorHistoryComponent } from './sensor-history/sensor-history.component';
 import { SensorDashboardComponent } from './sensor-dashboard/sensor-dashboard.component';
-
+import { HistoryTableComponent } from './history-table/history-table.component';
 @NgModule({
   declarations: [
     SensorDetailsComponent,
     SensorHistoryComponent,
-    SensorDashboardComponent
+    SensorDashboardComponent,
+    HistoryTableComponent
   ],
   imports: [
     BrowserModule,
@@ -24,11 +25,12 @@ import { SensorDashboardComponent } from './sensor-dashboard/sensor-dashboard.co
     FlexLayoutModule,
     BrowserAnimationsModule,
     MomentModule,
-    MdButtonModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdCardModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatTableModule,
     SensorRouting
   ],
   providers: [WebsocketService, SensorService],

@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule, MdIconModule, MdCardModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -17,11 +17,11 @@ import { AppComponent } from './app.component';
     HttpModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdCardModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
     SensorModule,
     AppRoutingModule
   ],

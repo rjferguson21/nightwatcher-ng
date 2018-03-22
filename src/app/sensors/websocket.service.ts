@@ -8,13 +8,11 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class WebsocketService {
-  public eventStream: Subject<any>;
+  public eventStream: Subject<any> = new Subject();
   public messages: Observable<any>;
   public client: any;
 
-  constructor() {
-    this.eventStream = new Subject();
-  }
+  constructor() { }
 
   public connect() {
     // Using share() causes a single websocket to be created when the first
