@@ -1,2 +1,8 @@
-<h3>{{ sensor?.name }} History</h3>
-<app-history-table [history]="history"></app-history-table>
+<!-- <h3>{{ sensor?.name }} History</h3> -->
+<div fxLayout>
+  <app-history-table fxFlex [history]="history"></app-history-table>
+  <!-- <app-history-heatmap fxFlex [history]="history"></app-history-heatmap> -->
+  <app-history-timeline fxFlex [history]="history"></app-history-timeline>
+</div>
+
+

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [@sensorState]="sensor.status" (click)="sensor.status='0'">
   <mat-card-header>
     <div mat-card-avatar>
       <mat-icon *ngIf="sensor.status == '0'">check_circle</mat-icon>

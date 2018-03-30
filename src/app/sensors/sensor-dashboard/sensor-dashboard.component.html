@@ -1,5 +1,7 @@
-<div fxLayout fxLayoutGap="25px">
+<div fxLayout fxLayout.lt-lg="column" fxLayoutGap="25px">
   <app-history-table fxFlex="33" [history]="history" [displayedColumns]="displayedColumns"></app-history-table>
+  <!-- <app-history-heatmap fxFlex [history]="history"></app-history-heatmap> --> 
+  <app-history-timeline fxFlex [history]="history"></app-history-timeline>
   <div fxFlex fxLayout="column" fxLayoutGap="25px">
     <h3>Sensors</h3>
     <app-sensor-details fxFlex="nogrow" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>

@@ -23,7 +23,7 @@ export class SensorHistoryEvent {
   sensorId: string;
   fromStatus: string;
   toStatus: string;
-  lastUpdated: Date;
+  lastUpdated: string;
   name?: string;
 }
 
@@ -75,6 +75,11 @@ export class SensorService {
     return this.http.get('/api/sensors/' + id + '/history')
                     .map( (response: Response) => {
                       return response.json();
+                    }).flatMap((history: SensorHistoryEvent[]) => {
+                      return history.map((event) => {
+                        event.name = Mapping[event.sensorId].desc;
+                        return history;
+                      });
                     });
   }
   allHistory(): Observable<SensorHistoryEvent[]> {
