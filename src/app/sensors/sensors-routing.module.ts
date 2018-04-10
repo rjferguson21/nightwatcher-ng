@@ -1,3 +1,4 @@
+import { HistoryComponent } from './history/history.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SensorDashboardComponent } from './sensor-dashboard/sensor-dashboard.component';
@@ -16,6 +17,10 @@ const sensorRoutes: Routes = [
   {
     path: 'sensors/:id',
     component: SensorHistoryComponent
+  },
+  {
+    path: 'history',
+    component: HistoryComponent
   }
 ];
 

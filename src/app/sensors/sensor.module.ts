@@ -13,10 +13,9 @@ import { SensorDetailsComponent } from './sensor-details/sensor-details.componen
 import { SensorHistoryComponent } from './sensor-history/sensor-history.component';
 import { SensorDashboardComponent } from './sensor-dashboard/sensor-dashboard.component';
 import { HistoryTableComponent } from './history-table/history-table.component';
-import { HistoryHeatmapComponent } from './history-heatmap/history-heatmap.component';
-import { CalendarHeatmap } from 'angular2-calendar-heatmap';
 import { D3Service } from 'd3-ng2-service';
 import { HistoryTimelineComponent } from './history-timeline/history-timeline.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +23,9 @@ import { HistoryTimelineComponent } from './history-timeline/history-timeline.co
     SensorHistoryComponent,
     SensorDashboardComponent,
     HistoryTableComponent,
-    HistoryHeatmapComponent,
     HistoryTimelineComponent,
-    CalendarHeatmap,
-    SensorDotComponent
+    SensorDotComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

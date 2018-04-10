@@ -1,17 +1,4 @@
-<div fxLayout fxLayout.lt-lg="column" fxLayoutGap="25px">
-  <div fxFlex="33">
-    <h3>History</h3>
-    <app-history-table [history]="history" [displayedColumns]="displayedColumns"></app-history-table>
-  </div> 
-  <!-- <app-history-heatmap fxFlex [history]="history"></app-history-heatmap> --> 
-  <div fxFlex fxLayout="column">
-    <h4>AM</h4>
-    <app-history-timeline fxFlex="nogrow" [history]="amHistory" amOrPm="am"></app-history-timeline>
-    <h4>PM</h4>
-    <app-history-timeline fxFlex="nogrow" [history]="pmHistory" amOrPm="pm"></app-history-timeline>
-  </div>
-  <div fxFlex fxLayout="column" fxLayoutGap="25px">
-    <h3>Sensors</h3>
-    <app-sensor-details fxFlex="nogrow" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
-  </div>
+<h3>Sensors</h3>
+<div fxLayout="column" fxLayoutGap="25px">
+  <app-sensor-details fxFlex="nogrow" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
 </div>
