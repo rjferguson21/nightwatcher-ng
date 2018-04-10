@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 
 html, body {
   padding: 0;
@@ -10,4 +10,55 @@ html, body {
 
 .main {
   padding: 20px;
+}
+
+.tick {
+  fill: white;
+}
+
+
+.tick > text {
+  stroke: white !important;
+}
+
+/* .tick > line {
+  stroke: rgba(255,255,255,.12);
+} */
+
+body {
+  font-family: Sans-serif;
+  margin: 0;
+}
+
+.background {
+  stroke-width: 0;
+  fill: #424242
+}
+
+.axis .tick:first-of-type {
+  display: none;
+}
+
+.axis .tick text {
+  font-size: 22px;
+}
+
+.minor-ticks text, .minor-ticks path {
+  display: none;
+}
+
+.pointers rect {
+  fill-opacity: 0.7;
+}
+
+.pointers .hour, .pointers .min {
+  fill: white;
+}
+
+.pointers .sec {
+  fill: red;
+}
+
+.pointers .center {
+  fill: white;
 }

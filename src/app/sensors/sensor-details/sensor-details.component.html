@@ -1,8 +1,9 @@
 <mat-card [@sensorState]="sensor.status" (click)="sensor.status='0'">
   <mat-card-header>
     <div mat-card-avatar>
-      <mat-icon *ngIf="sensor.status == '0'">check_circle</mat-icon>
-      <mat-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</mat-icon>
+      <app-sensor-dot [id]="sensor.id"></app-sensor-dot>
+      <!-- <mat-icon *ngIf="sensor.status == '0'">check_circle</mat-icon> -->
+      <!-- <mat-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</mat-icon> -->
     </div>
     <mat-card-title>
       {{ mapping[sensor.id]?.desc || sensor.id }}
@@ -17,7 +18,7 @@
     <mat-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</mat-icon>
   </mat-card-content>
   
-  <mat-card-actions>
+  <mat-card-actions align="end">
     <button mat-raised-button mat-button color="secondary" [routerLink]="['.', sensor.id]">
       History
     </button>

@@ -1,3 +1,4 @@
+import { SensorDotComponent } from './sensor-dot/sensor-dot.component';
 import { SensorRouting } from './sensors-routing.module';
 import { SensorService } from './sensor.service';
 import { WebsocketService } from './websocket.service';
@@ -25,7 +26,8 @@ import { HistoryTimelineComponent } from './history-timeline/history-timeline.co
     HistoryTableComponent,
     HistoryHeatmapComponent,
     HistoryTimelineComponent,
-    CalendarHeatmap
+    CalendarHeatmap,
+    SensorDotComponent
   ],
   imports: [
     BrowserModule,
