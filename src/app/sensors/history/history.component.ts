@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'app-sensor-dashboard',
-  templateUrl: './sensor-dashboard.component.html',
-  styleUrls: ['./sensor-dashboard.component.css']
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.css']
 })
-export class SensorDashboardComponent implements OnInit {
+export class HistoryComponent implements OnInit {
   private socketSubscription: Subscription;
   messages: string[] = [];
   displayedColumns = ['dot', 'name', 'statusDesc', 'lastUpdated'];

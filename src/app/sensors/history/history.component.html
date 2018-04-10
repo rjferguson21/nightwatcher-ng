@@ -1,0 +1,12 @@
+<div fxLayout fxLayout.lt-lg="column" fxLayoutGap="25px">
+  <div fxFlex="66">
+    <h3>History</h3>
+    <app-history-table [history]="history" [displayedColumns]="displayedColumns"></app-history-table>
+  </div> 
+  <div fxFlex fxLayout="column">
+    <h4>AM</h4>
+    <app-history-timeline fxFlex="nogrow" [history]="amHistory" amOrPm="am"></app-history-timeline>
+    <h4>PM</h4>
+    <app-history-timeline fxFlex="nogrow" [history]="pmHistory" amOrPm="pm"></app-history-timeline>
+  </div>
+</div>

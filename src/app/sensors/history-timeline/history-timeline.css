@@ -1,0 +1,12 @@
+:host {
+  height: 500px;
+}
+
+.background {
+  stroke-width: 0;
+  fill: #424242;
+}
+
+.tick {
+  fill: white;
+}
