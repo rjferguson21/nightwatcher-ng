@@ -111,5 +111,21 @@ export const Mapping = {
       '0': 'Untripped',
       '1': 'Tripped'
     }
+  },
+  '11': {
+    desc: 'Right Garage Door',
+    icon: 'track_changes',
+    status: {
+      '0': 'Opened',
+      '1': 'Closed'
+    }
+  },
+  '12': {
+    desc: 'Left Garage Door',
+    icon: 'track_changes',
+    status: {
+      '0': 'Opened',
+      '1': 'Closed'
+    }
   }
 };

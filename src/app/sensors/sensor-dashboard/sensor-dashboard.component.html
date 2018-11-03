@@ -1,4 +1,9 @@
 <h3>Sensors</h3>
-<div fxLayout="column" fxLayoutGap="25px">
-  <app-sensor-details fxFlex="nogrow" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
+<div fxLayout="row" fxLayoutGap="25px">
+  <div fxFlex fxLayout="column" fxLayoutGap="25px">
+    <app-sensor-details fxFlex="nogrow" *ngFor="let sensor of sensorService.sensorStore.get()" [sensor]="sensor"></app-sensor-details>
+  </div>
+  <div fxFlex>
+    <app-history-table [history]="history" [displayedColumns]="displayedColumns"></app-history-table>
+  </div>
 </div>

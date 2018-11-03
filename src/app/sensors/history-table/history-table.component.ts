@@ -11,7 +11,7 @@ import 'rxjs/add/operator/first';
 })
 export class HistoryTableComponent implements OnInit {
   @Input() history: SensorHistoryEvent[];
-  @Input() displayedColumns = ['id', 'sensorId', 'fromStatus', 'toStatus', 'lastUpdated'];
+  @Input() displayedColumns = ['dot', 'name', 'statusDesc', 'lastUpdated'];
 
   constructor() { }
 
