@@ -113,6 +113,7 @@ export const Mapping = {
     }
   },
   '11': {
+    type: 'switch',
     desc: 'Right Garage Door',
     icon: 'track_changes',
     status: {
@@ -121,6 +122,7 @@ export const Mapping = {
     }
   },
   '12': {
+    type: 'switch',
     desc: 'Left Garage Door',
     icon: 'track_changes',
     status: {

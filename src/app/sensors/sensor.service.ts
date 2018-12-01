@@ -17,6 +17,7 @@ export class Sensor {
   lastUpdated: Date;
   status: string;
   name?: string;
+  type?: string;
 }
 export class SensorHistoryEvent {
   id: string;
@@ -63,6 +64,12 @@ export class SensorService {
                     .map(data => {
                       this.sensorStore.update(data as Sensor);
                       return this.sensorStore;
+                    });
+  }
+  update(id: string, payload: object) {
+    return this.http.put('/api/sensors/' + id, payload)
+                    .map( (response: Response) => {
+                      return response.json();
                     });
   }
   get(id: string): Observable<Sensor> {

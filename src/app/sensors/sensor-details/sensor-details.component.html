@@ -13,14 +13,16 @@
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <div *ngIf="sensor.status == '1'">Tripped</div>
-    <div *ngIf="sensor.status == '0'">Idle</div>
+    <div>{{ mapping[sensor.id].status[sensor.status] }}</div>
     <mat-icon *ngIf="sensor.status == '1'">{{ mapping[sensor.id].icon }}</mat-icon>
   </mat-card-content>
   
   <mat-card-actions align="end">
     <button mat-raised-button mat-button color="secondary" [routerLink]="['.', sensor.id]">
       History
+    </button>
+    <button mat-raised-button mat-button color="secondary" (click)="toggle(sensor)" *ngIf="toggleable(sensor)">
+      Toggle
     </button>
   </mat-card-actions>
 </mat-card>

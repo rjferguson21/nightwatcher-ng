@@ -1,3 +1,4 @@
+import { SensorService } from './../sensor.service';
 import { Component, OnInit, Input } from '@angular/core';
 import {
   trigger,
@@ -8,6 +9,7 @@ import {
 } from '@angular/animations';
 
 import { Mapping } from './../mapping';
+import { Sensor } from '../sensor.service';
 
 @Component({
   selector: 'app-sensor-details',
@@ -30,9 +32,19 @@ export class SensorDetailsComponent implements OnInit {
   @Input() sensor: any;
   mapping = Mapping;
 
-  constructor() { }
+  constructor(private sensorService: SensorService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  public toggle(sensor: Sensor) {
+    const value = sensor.status === '0' ? '1' : '0';
+    this.sensorService.update(sensor.id, { value }).first().subscribe();
   }
+
+  public toggleable(sensor: Sensor) {
+    return this.mapping[sensor.id].type === 'switch';
+  }
+
+
 
 }
