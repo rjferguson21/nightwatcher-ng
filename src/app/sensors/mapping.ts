@@ -117,8 +117,8 @@ export const Mapping = {
     desc: 'Right Garage Door',
     icon: 'track_changes',
     status: {
-      '0': 'Opened',
-      '1': 'Closed'
+      '1': 'Opened',
+      '0': 'Closed'
     }
   },
   '12': {
@@ -126,8 +126,8 @@ export const Mapping = {
     desc: 'Left Garage Door',
     icon: 'track_changes',
     status: {
-      '0': 'Opened',
-      '1': 'Closed'
+      '1': 'Opened',
+      '0': 'Closed'
     }
   }
 };
