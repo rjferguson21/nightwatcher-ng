@@ -22,3 +22,13 @@ build:
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
     - master
+
+deploy to production:
+  stage: deploy
+  environment:
+    name: production
+  when: manual
+  script:
+  - kubectl get pods
+  only:
+  - master
