@@ -32,9 +32,7 @@ deploy to production:
   image: edoburu/gitlab-kubernetes-client
   environment:
     name: production
-  when: manual
   script:
-  - kubectl get pods
-  - kubectl get namespace
+  - kubectl scale --replicas=0 deployment/webapp && kubectl scale --replicas=1 deployment/webapp
   only:
   - master
