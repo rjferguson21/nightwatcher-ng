@@ -35,5 +35,6 @@ deploy to production:
   when: manual
   script:
   - kubectl get pods
+  - kubectl get namespace
   only:
   - master
