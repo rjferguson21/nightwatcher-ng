@@ -129,5 +129,13 @@ export const Mapping = {
       '1': 'Opened',
       '0': 'Closed'
     }
+  },
+  '20': {
+    desc: 'Gate',
+    icon: 'track_changes',
+    status: {
+      '1': 'Opened',
+      '0': 'Closed'
+    }
   }
 };
