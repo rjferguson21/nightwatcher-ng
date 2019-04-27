@@ -137,5 +137,37 @@ export const Mapping = {
       '1': 'Opened',
       '0': 'Closed'
     }
+  },
+  'B0BE76DBC3AA': {
+    desc: 'Fish Tank',
+    icon: 'track_changes',
+    status: {
+      '1': 'Opened',
+      '0': 'Closed'
+    }
+  },
+  'B0BE76DBC00F': {
+    desc: 'Living Room Light',
+    icon: 'track_changes',
+    status: {
+      '1': 'Opened',
+      '0': 'Closed'
+    }
+  },
+  'B0BE769D4EC2': {
+    desc: 'Backyard Lights',
+    icon: 'track_changes',
+    status: {
+      '1': 'Opened',
+      '0': 'Closed'
+    }
+  },
+  'B0BE769D58A8': {
+    desc: 'Front Lights',
+    icon: 'track_changes',
+    status: {
+      '1': 'Opened',
+      '0': 'Closed'
+    }
   }
 };
